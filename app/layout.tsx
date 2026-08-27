@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ? { index: true, follow: true }
     : { index: false, follow: false },
   applicationName: siteConfig.name,
-  authors: [{ name: "PES Explorer" }],
+  authors: [{ name: siteConfig.profile.name }],
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,

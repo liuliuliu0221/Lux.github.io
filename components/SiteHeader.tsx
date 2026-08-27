@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
 import { profile } from "@/data/profile";
 
@@ -21,7 +20,7 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
         <a href={anchor("about")}>About</a>
         <a href={anchor("skills")}>Skills</a>
         <a href={anchor("projects")}>Projects</a>
-        <Link href="/blog">Blog</Link>
+        <a href={anchor("blog")}>Blog</a>
       </nav>
 
       <TrackedLink
@@ -42,7 +41,7 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
           <a href={anchor("about")}>About</a>
           <a href={anchor("skills")}>Skills</a>
           <a href={anchor("projects")}>Projects</a>
-          <Link href="/blog">Blog</Link>
+          <a href={anchor("blog")}>Blog</a>
           <a href={anchor("contact")}>Contact</a>
           <TrackedLink
             href={profile.contacts[0].href}

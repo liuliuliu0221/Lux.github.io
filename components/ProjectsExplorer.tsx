@@ -4,7 +4,6 @@ import type { CSSProperties } from "react";
 import { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { projects, type Project } from "@/data/projects";
-import { profile } from "@/data/profile";
 import { trackEvent } from "@/lib/analytics";
 import { TrackedLink } from "@/components/TrackedLink";
 
@@ -112,26 +111,23 @@ export function ProjectsExplorer() {
               >
                 查看 PM 决策日志 <span aria-hidden="true">↗</span>
               </button>
+              {project.url ? (
+                <TrackedLink
+                  className="project-source"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  eventName="project_source_click"
+                  eventTarget={project.slug}
+                  eventSource="projects"
+                >
+                  查看 GitHub 仓库 <span aria-hidden="true">↗</span>
+                </TrackedLink>
+              ) : (
+                <span className="project-source is-private">结项报告不公开</span>
+              )}
             </article>
           ))}
-        </div>
-        <div className="project-proof-links" aria-label="项目代码与论文入口">
-          {profile.contacts
-            .filter((contact) => contact.id === "github" || contact.id === "scholar")
-            .map((contact) => (
-              <TrackedLink
-                href={contact.href}
-                key={contact.id}
-                target="_blank"
-                rel="noreferrer"
-                eventName="contact_click"
-                eventTarget={contact.id}
-                eventSource="projects"
-              >
-                <span>{contact.shortLabel}</span>
-                {contact.label} <i aria-hidden="true">↗</i>
-              </TrackedLink>
-            ))}
         </div>
       </div>
 
@@ -172,6 +168,19 @@ export function ProjectsExplorer() {
               {activeProject.tags.map((tag) => <span key={tag}>{tag}</span>)}
             </div>
           </div>
+          {activeProject.url ? (
+            <TrackedLink
+              className="dialog-source"
+              href={activeProject.url}
+              target="_blank"
+              rel="noreferrer"
+              eventName="project_source_click"
+              eventTarget={activeProject.slug}
+              eventSource="project_dialog"
+            >
+              在 GitHub 查看项目 <span aria-hidden="true">↗</span>
+            </TrackedLink>
+          ) : null}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

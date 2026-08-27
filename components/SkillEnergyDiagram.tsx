@@ -4,7 +4,7 @@ import { useState } from "react";
 import { skills, type Skill } from "@/data/skills";
 
 function skillY(skill: Skill) {
-  return 372 - skill.rarity * 3;
+  return 348 - skill.rarity * 3;
 }
 
 function skillX(skill: Skill) {
@@ -24,15 +24,15 @@ export function SkillEnergyDiagram() {
         </div>
         <svg
           className="skill-chart"
-          viewBox="0 0 1000 430"
+          viewBox="0 0 1000 250"
           preserveAspectRatio="xMidYMid meet"
           aria-hidden="true"
         >
           <g className="chart-grid">
-            {[70, 140, 210, 280, 350].map((y) => (
+            {[70, 140, 210].map((y) => (
               <line key={y} x1="90" x2="950" y1={y} y2={y} />
             ))}
-            <line x1="180" x2="180" y1="35" y2="390" />
+            <line x1="180" x2="180" y1="25" y2="225" />
           </g>
           {skills.map((skill) => {
             const y = skillY(skill);

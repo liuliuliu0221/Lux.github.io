@@ -1,5 +1,5 @@
 export type ContactLink = {
-  id: "resume" | "email" | "github" | "scholar" | "linkedin" | "xiaohongshu" | "wechat";
+  id: "resume" | "email" | "github" | "linkedin" | "xiaohongshu" | "wechat";
   label: string;
   shortLabel: string;
   href: string;
@@ -10,13 +10,17 @@ export type ContactLink = {
 };
 
 export const profile = {
-  name: "姓名待补充",
-  displayName: "PROFILE / PENDING",
-  role: "AI Product Manager Candidate",
-  location: "所在城市待补充",
-  email: "replace-me@example.com",
-  description: "量子化学研究背景与 AI 产品能力的跨领域候选人；个人资料待发布前统一替换。",
-  contentNotice: "当前姓名、邮箱、外部主页和简历均为功能占位资料，正式发布前统一替换。",
+  name: "刘芯羽",
+  englishName: "Lux",
+  displayName: "AI PM * Indie Developer",
+  role: "AI Product Manager",
+  location: "",
+  education: "大连理工大学（985）硕士",
+  email: "13478454399@163.com",
+  description: "量子化学研究背景与 AI 产品能力的跨领域候选人。",
+  contentNotice: "当前简历仍为功能占位文件，正式发布前替换。",
+  publicAccountName: "超级土豆饼",
+  portrait: "/profile-lux.jpg",
   contacts: [
     {
       id: "resume",
@@ -24,61 +28,43 @@ export const profile = {
       shortLabel: "RESUME",
       href: "/resume-placeholder.pdf",
       event: "resume_download",
-      download: "PES-Explorer-占位简历.pdf",
+      download: "刘芯羽-AIPM-简历.pdf",
       placeholder: true,
     },
     {
       id: "email",
-      label: "示例邮箱",
+      label: "13478454399@163.com",
       shortLabel: "EMAIL",
-      href: "mailto:replace-me@example.com?subject=PES%20Explorer%20Contact",
+      href: "mailto:13478454399@163.com?subject=%E6%9D%A5%E8%87%AA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E7%9A%84%E5%B2%97%E4%BD%8D%E6%B2%9F%E9%80%9A",
       event: "contact_click",
-      placeholder: true,
+      placeholder: false,
     },
     {
       id: "github",
-      label: "GitHub 入口",
+      label: "liuliuliu0221",
       shortLabel: "GITHUB",
-      href: "https://github.com/",
+      href: "https://github.com/liuliuliu0221",
       event: "contact_click",
       external: true,
-      placeholder: true,
-    },
-    {
-      id: "scholar",
-      label: "Scholar 入口",
-      shortLabel: "SCHOLAR",
-      href: "https://scholar.google.com/",
-      event: "contact_click",
-      external: true,
-      placeholder: true,
-    },
-    {
-      id: "linkedin",
-      label: "LinkedIn 入口",
-      shortLabel: "LINKEDIN",
-      href: "https://www.linkedin.com/",
-      event: "contact_click",
-      external: true,
-      placeholder: true,
+      placeholder: false,
     },
     {
       id: "xiaohongshu",
       label: "小红书入口",
       shortLabel: "REDNOTE",
-      href: "https://www.xiaohongshu.com/",
+      href: "https://www.xiaohongshu.com/user/profile/63f4f96f000000000f01239d",
       event: "contact_click",
       external: true,
-      placeholder: true,
+      placeholder: false,
     },
     {
       id: "wechat",
-      label: "微信入口",
+      label: "微信二维码",
       shortLabel: "WECHAT",
-      href: "https://weixin.qq.com/",
+      href: "/wechat-qr-lux.jpg",
       event: "contact_click",
       external: true,
-      placeholder: true,
+      placeholder: false,
     },
   ] satisfies ContactLink[],
 };

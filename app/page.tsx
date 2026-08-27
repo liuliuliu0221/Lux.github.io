@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { HeroPesExperience } from "@/components/HeroPesExperience";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SkillEnergyDiagram } from "@/components/SkillEnergyDiagram";
-import { posts } from "@/data/posts";
+import { externalPosts } from "@/data/posts";
+import { publications } from "@/data/publications";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
   title: { absolute: "PES Explorer｜AI 产品经理候选人" },
@@ -77,7 +79,7 @@ export default function Home() {
               <a className="primary-button" href="#about">
                 探索我的势能面 <span aria-hidden="true">↓</span>
               </a>
-              <p>AI Product Manager Candidate</p>
+              <p>{profile.role}</p>
             </div>
           </div>
 
@@ -89,14 +91,55 @@ export default function Home() {
         </section>
 
         <section className="site-section about-section" id="about" aria-labelledby="about-title">
-          <div className="section-heading" data-reveal="up">
-            <p className="section-index">02 / ABOUT</p>
-            <h2 id="about-title">
-              我能在技术逻辑与产品思维之间，找到最优解。
-            </h2>
-            <p className="section-lead">
-              7 年学术训练教会我的不是某个具体知识，而是如何在高度不确定的高维空间里找到那个最优解。我把这套能力拆解为产品力与技术力，向你展示。
-            </p>
+          <div className="about-profile" data-reveal="up">
+            <div className="about-profile-visual">
+              <Image
+                className="about-profile-photo"
+                src={profile.portrait}
+                alt={`${profile.name}的个人照片`}
+                width={675}
+                height={900}
+                sizes="(max-width: 760px) calc(100vw - 2.5rem), 30vw"
+              />
+              <span>PROFILE SAMPLE · 001</span>
+            </div>
+
+            <div className="about-profile-copy">
+              <p className="section-index">02 / ABOUT · WHO I AM</p>
+              <span className="about-profile-kicker">{profile.displayName}</span>
+              <h2 id="about-title">你好，我是{profile.name}。<small>{profile.englishName}</small></h2>
+              <p className="about-profile-summary">
+                {profile.description} 我曾在高维化学空间里计算最优解，现在把同一套逻辑用于 AI 产品实践。
+              </p>
+              <dl className="about-profile-facts">
+                <div>
+                  <dt>ROLE</dt>
+                  <dd>{profile.role}</dd>
+                </div>
+                <div>
+                  <dt>EDUCATION</dt>
+                  <dd>{profile.education}</dd>
+                </div>
+                <div>
+                  <dt>BACKGROUND</dt>
+                  <dd>量子化学 / 高维构象空间</dd>
+                </div>
+                <div>
+                  <dt>FOCUS</dt>
+                  <dd>Human–AI Interaction</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <div className="about-capability-heading" data-reveal="up">
+            <p>WHAT I BRING / CAPABILITY</p>
+            <div>
+              <h3>在技术逻辑与产品思维之间，找到最优解。</h3>
+              <p>
+                长期的学术训练教会我的不是某个具体知识，而是如何在高度不确定的高维空间里拆解问题、验证假设并找到可行路径。下面是这套能力在产品与技术两侧的体现。
+              </p>
+            </div>
           </div>
 
           <div className="capability-grid">
@@ -190,32 +233,120 @@ export default function Home() {
 
           <ProjectsExplorer />
           <p className="data-note">
-            当前项目文案为基于设计方案整理的内容草案，不包含未经核验的论文或量化成果。
+            P01 来自本人确认信息；P02–P05 根据公开 GitHub 仓库整理，不包含未经核验的量化成果。
           </p>
         </section>
 
         <section className="site-section blog-section" id="blog" aria-labelledby="blog-title">
-          <div className="section-heading section-heading-row" data-reveal="up">
+          <div className="section-heading section-heading-row blog-heading" data-reveal="up">
             <div>
-              <p className="section-index">05 / OBSERVATION LOG</p>
+              <p className="section-index">05 / BLOG</p>
               <h2 id="blog-title">用科学视角，观测 AI 世界。</h2>
+              <p className="section-lead">
+                记录 AI 产品机制、技术趋势与用户信任。点击文章卡片即可前往原发布平台阅读。
+              </p>
             </div>
-            <p className="section-lead">
-              从学术迁移、技术拆解与产品决策三个方向记录观察。当前文章为功能验证初稿，正式发布前仍需作者复核。
-            </p>
           </div>
 
-          <div className="post-list" data-reveal="up">
-            {posts.map((post) => (
-              <article className="post-row" key={post.code}>
-                <span>{post.code}</span>
-                <h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3>
-                <p>{post.tags.join(" / ")}</p>
-                <Link className="post-status" href={`/blog/${post.slug}`}>READ ↗</Link>
+          <div className="blog-index-list" aria-label="文章列表">
+            {externalPosts.map((post) => (
+              <article className="blog-index-card" key={post.code} data-reveal="up">
+                <a className="post-visual" href={post.url} target="_blank" rel="noreferrer" aria-label={`阅读《${post.title}》`}>
+                  <Image
+                    src={post.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 760px) calc(100vw - 2.5rem), 31vw"
+                    style={{ objectFit: "contain" }}
+                  />
+                </a>
+                <div className="post-code">
+                  <span>{post.code}</span>
+                  <div className="post-tags">
+                    {post.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                  <span className="post-date">{post.publishedAt}</span>
+                </div>
+                <div className="post-content">
+                  <h3><a href={post.url} target="_blank" rel="noreferrer">{post.title}</a></h3>
+                  <p>{post.description}</p>
+                </div>
+                <div className="post-link">
+                  <span>{post.source}</span>
+                  <a href={post.url} target="_blank" rel="noreferrer">阅读原文 <span aria-hidden="true">↗</span></a>
+                </div>
               </article>
             ))}
           </div>
-          <Link className="blog-index-link" href="/blog">查看全部观测日志 →</Link>
+
+          <section className="academic-publications" aria-labelledby="publications-title" data-reveal="up">
+            <header className="publication-heading">
+              <p>ACADEMIC PUBLICATIONS</p>
+              <div>
+                <h3 id="publications-title">学术发表</h3>
+                <span>在此集中展示经过本人确认的论文与学术成果。</span>
+              </div>
+            </header>
+
+            <ol className="publication-list">
+              {publications.map((publication) => (
+                <li className={publication.placeholder ? "is-placeholder" : undefined} key={publication.id}>
+                  <div className="publication-code">
+                    <span>{publication.id}</span>
+                    <span>{publication.year}</span>
+                  </div>
+                  <div>
+                    <h4>{publication.title}</h4>
+                    <p>{publication.authors}</p>
+                    <small>{publication.venue} · {publication.citation}</small>
+                  </div>
+                  {publication.url ? (
+                    <a href={publication.url} target="_blank" rel="noreferrer">查看发表记录 ↗</a>
+                  ) : (
+                    <span className="publication-status">DATA PENDING</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <aside className="blog-discussion" data-reveal="up">
+            <div className="blog-discussion-copy">
+              <p>CONTINUE THE DISCUSSION</p>
+              <h3>观测不止发生在这里。</h3>
+              <span>也可以在小红书和微信公众号“{profile.publicAccountName}”继续交流。</span>
+            </div>
+            <div className="discussion-qr-grid">
+              <a
+                className="social-qr-card"
+                href="https://www.xiaohongshu.com/user/profile/63f4f96f000000000f01239d"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="打开小红书“超级土豆饼儿”主页"
+              >
+                <span className="xiaohongshu-qr-image" aria-hidden="true" />
+                <strong>小红书主页</strong>
+                <small>扫码关注“超级土豆饼儿”</small>
+              </a>
+              <a
+                className="social-qr-card"
+                href="/wechat-public-account-qr.jpg"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`查看微信公众号“${profile.publicAccountName}”主页二维码大图`}
+              >
+                <Image
+                  src="/wechat-public-account-qr.jpg"
+                  alt={`微信公众号“${profile.publicAccountName}”主页二维码`}
+                  width={430}
+                  height={430}
+                  sizes="(max-width: 760px) 50vw, 176px"
+                />
+                <strong>微信公众号主页</strong>
+                <small>扫码关注“{profile.publicAccountName}”</small>
+              </a>
+            </div>
+          </aside>
         </section>
       </main>
       <SiteFooter />

@@ -1,4 +1,8 @@
-export type AnalyticsEventName = "resume_download" | "project_open" | "contact_click";
+export type AnalyticsEventName =
+  | "resume_download"
+  | "project_open"
+  | "project_source_click"
+  | "contact_click";
 
 type AnalyticsPayload = {
   target: string;

@@ -11,7 +11,7 @@ export const siteConfig = {
   ogImage: new URL("/og.png", siteUrl).toString(),
   isProduction,
   profile: {
-    name: `${profile.name}（内容占位）`,
+    name: profile.name,
     jobTitle: profile.role,
     description: profile.description,
   },

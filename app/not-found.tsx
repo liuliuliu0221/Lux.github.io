@@ -12,7 +12,7 @@ export default function NotFound() {
         <p>页面可能已移动，或仍在等待补充。返回全局视图继续探索。</p>
         <div className="status-actions">
           <Link className="primary-button" href="/">返回首页</Link>
-          <Link href="/blog">查看观测日志</Link>
+          <Link href="/#blog">查看 Blog</Link>
         </div>
       </main>
       <SiteFooter />
