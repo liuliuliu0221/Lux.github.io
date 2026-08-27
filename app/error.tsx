@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { withBasePath } from "@/lib/paths";
 
 export default function ErrorPage({
   error,
@@ -23,7 +24,7 @@ export default function ErrorPage({
       <p>核心内容仍然安全。你可以重新计算当前路径，或返回首页继续浏览。</p>
       <div className="status-actions">
         <button className="primary-button" type="button" onClick={reset}>重新计算</button>
-        <Link href="/">返回首页</Link>
+        <Link href={withBasePath("/")}>返回首页</Link>
       </div>
     </main>
   );

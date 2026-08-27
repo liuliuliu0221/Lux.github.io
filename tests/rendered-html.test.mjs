@@ -3,12 +3,16 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
+  const requestPath =
+    path !== "/" && !path.endsWith("/") && !path.split("/").at(-1)?.includes(".")
+      ? `${path}/`
+      : path;
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request(new URL(path, "http://localhost"), {
+    new Request(new URL(requestPath, "http://localhost"), {
       headers: { accept: "text/html" },
     }),
     {
@@ -185,7 +189,8 @@ test("keeps the experience accessible and verified data explicit", async () => {
   assert.match(css, /\.blog-index-card > :not\(\.post-visual\)\s*\{[\s\S]*?width:\s*100%;[\s\S]*?justify-self:\s*stretch;/);
   assert.match(css, /\.blog-index-card > div > p\s*\{[\s\S]*?max-width:\s*none;/);
   assert.match(css, /\.discussion-qr-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,/);
-  assert.match(css, /\.xiaohongshu-qr-image\s*\{[\s\S]*?background-image:\s*url\("\/xiaohongshu-profile-qr\.jpg"\)/);
+  assert.match(home, /withBasePath\("\/xiaohongshu-profile-qr\.jpg"\)/);
+  assert.match(css, /\.xiaohongshu-qr-image\s*\{[\s\S]*?background-repeat:\s*no-repeat/);
   assert.match(css, /\.post-visual\s*\{[\s\S]*?aspect-ratio:\s*16 \/ 9;[\s\S]*?align-self:\s*center;/);
   assert.match(css, /\.identity-badge-main\s*\{[\s\S]*?grid-template-columns:/);
   assert.match(css, /\.identity-badge\s*\{[\s\S]*?border-radius:\s*clamp\(1\.15rem, 2vw, 1\.8rem\)/);
@@ -206,7 +211,7 @@ test("keeps the experience accessible and verified data explicit", async () => {
   assert.match(css, /\.elastic-lanyard\s*\{[\s\S]*?height:\s*var\(--lanyard-length\)/);
   assert.match(css, /\.elastic-pull-cue\s*\{[\s\S]*?animation:\s*pull-cue-drop 1\.8s ease-in-out infinite/);
   assert.match(css, /\.elastic-pull-cue i::after\s*\{[\s\S]*?rotate\(45deg\)/);
-  assert.match(css, /\.elastic-lanyard\s*\{[\s\S]*?width:\s*1\.55rem;[\s\S]*?url\("\/lanyard-texture\.png"\)/);
+  assert.match(css, /\.elastic-lanyard\s*\{[\s\S]*?width:\s*1\.55rem;[\s\S]*?var\(--lanyard-texture\)/);
   assert.match(css, /background-blend-mode:\s*screen, normal/);
   assert.match(css, /--lanyard-length:\s*114px/);
   assert.match(css, /\.elastic-badge-rig\s*\{[\s\S]*?margin:\s*clamp\(1\.5rem, 3vw, 3rem\) auto 0/);

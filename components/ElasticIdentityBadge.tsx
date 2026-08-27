@@ -1,7 +1,8 @@
 "use client";
 
-import type { MouseEvent as ReactMouseEvent, PointerEvent as ReactPointerEvent, ReactNode } from "react";
+import type { CSSProperties, MouseEvent as ReactMouseEvent, PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { withBasePath } from "@/lib/paths";
 
 type ElasticIdentityBadgeProps = {
   backMessage: string;
@@ -215,7 +216,12 @@ export function ElasticIdentityBadge({ backMessage, children, label }: ElasticId
   };
 
   return (
-    <div className="elastic-badge-rig" ref={rigRef} data-reveal="up">
+    <div
+      className="elastic-badge-rig"
+      ref={rigRef}
+      data-reveal="up"
+      style={{ "--lanyard-texture": `url(${withBasePath("/lanyard-texture.png")})` } as CSSProperties}
+    >
       <span className="elastic-lanyard" aria-hidden="true" />
       <span className="elastic-pull-cue" aria-hidden="true">
         <span>PULL DOWN</span>

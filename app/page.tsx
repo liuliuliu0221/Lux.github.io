@@ -8,12 +8,15 @@ import { SkillEnergyDiagram } from "@/components/SkillEnergyDiagram";
 import { externalPosts } from "@/data/posts";
 import { publications } from "@/data/publications";
 import { profile } from "@/data/profile";
+import { withBasePath } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: { absolute: "PES Explorer｜AI 产品经理候选人" },
   description:
     "在技术逻辑与产品思维之间，寻找 Human-AI Interaction 的全局最优解。",
 };
+
+export const dynamic = "force-static";
 
 const productCraft = [
   {
@@ -324,19 +327,23 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="打开小红书“超级土豆饼儿”主页"
               >
-                <span className="xiaohongshu-qr-image" aria-hidden="true" />
+                <span
+                  className="xiaohongshu-qr-image"
+                  style={{ backgroundImage: `url(${withBasePath("/xiaohongshu-profile-qr.jpg")})` }}
+                  aria-hidden="true"
+                />
                 <strong>小红书主页</strong>
                 <small>扫码关注“超级土豆饼儿”</small>
               </a>
               <a
                 className="social-qr-card"
-                href="/wechat-public-account-qr.jpg"
+                href={withBasePath("/wechat-public-account-qr.jpg")}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`查看微信公众号“${profile.publicAccountName}”主页二维码大图`}
               >
                 <Image
-                  src="/wechat-public-account-qr.jpg"
+                  src={withBasePath("/wechat-public-account-qr.jpg")}
                   alt={`微信公众号“${profile.publicAccountName}”主页二维码`}
                   width={430}
                   height={430}

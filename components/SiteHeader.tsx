@@ -1,16 +1,17 @@
 import { TrackedLink } from "@/components/TrackedLink";
 import { profile } from "@/data/profile";
+import { withBasePath } from "@/lib/paths";
 
 type SiteHeaderProps = {
   home?: boolean;
 };
 
 export function SiteHeader({ home = false }: SiteHeaderProps) {
-  const anchor = (id: string) => (home ? `#${id}` : `/#${id}`);
+  const anchor = (id: string) => (home ? `#${id}` : `${withBasePath("/")}#${id}`);
 
   return (
     <header className="site-header">
-      <a className="brand" href={home ? "#home" : "/"} aria-label="PES Explorer 首页">
+      <a className="brand" href={home ? "#home" : withBasePath("/")} aria-label="PES Explorer 首页">
         <span className="brand-mark" aria-hidden="true" />
         PES Explorer
       </a>

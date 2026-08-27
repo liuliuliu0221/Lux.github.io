@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths";
+
 export type ContactLink = {
   id: "resume" | "email" | "github" | "linkedin" | "xiaohongshu" | "wechat";
   label: string;
@@ -20,13 +22,13 @@ export const profile = {
   description: "量子化学研究背景与 AI 产品能力的跨领域候选人。",
   contentNotice: "当前简历仍为功能占位文件，正式发布前替换。",
   publicAccountName: "超级土豆饼",
-  portrait: "/profile-lux.jpg",
+  portrait: withBasePath("/profile-lux.jpg"),
   contacts: [
     {
       id: "resume",
       label: "下载占位简历",
       shortLabel: "RESUME",
-      href: "/resume-placeholder.pdf",
+      href: withBasePath("/resume-placeholder.pdf"),
       event: "resume_download",
       download: "刘芯羽-AIPM-简历.pdf",
       placeholder: true,
@@ -61,7 +63,7 @@ export const profile = {
       id: "wechat",
       label: "微信二维码",
       shortLabel: "WECHAT",
-      href: "/wechat-qr-lux.jpg",
+      href: withBasePath("/wechat-qr-lux.jpg"),
       event: "contact_click",
       external: true,
       placeholder: false,

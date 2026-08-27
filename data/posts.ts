@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths";
+
 export type ExternalPost = {
   title: string;
   description: string;
@@ -17,7 +19,7 @@ export const externalPosts: ExternalPost[] = [
     tags: ["AI 记忆", "个性化", "产品机制"],
     code: "LOG.004",
     url: "https://www.woshipm.com/ai/6451657.html",
-    image: "/posts/ai-memory-forgetting.png",
+    image: withBasePath("/posts/ai-memory-forgetting.png"),
     source: "人人都是产品经理",
   },
   {
@@ -27,7 +29,7 @@ export const externalPosts: ExternalPost[] = [
     tags: ["AI Agent", "垂直 AI", "产品战略"],
     code: "LOG.003",
     url: "https://www.woshipm.com/ai/6444046.html",
-    image: "/posts/claude-finance-agent.png",
+    image: withBasePath("/posts/claude-finance-agent.png"),
     source: "人人都是产品经理",
   },
   {
@@ -37,7 +39,7 @@ export const externalPosts: ExternalPost[] = [
     tags: ["AI 搜索", "引用核验", "信任设计"],
     code: "LOG.002",
     url: "https://mp.weixin.qq.com/s/jaTJvKNIsac-0-gwIcwPiA",
-    image: "/posts/ai-search-citations.png",
+    image: withBasePath("/posts/ai-search-citations.png"),
     source: "微信公众号",
   },
   {
@@ -47,7 +49,7 @@ export const externalPosts: ExternalPost[] = [
     tags: ["SecondMe", "AI 身份", "冷启动"],
     code: "LOG.001",
     url: "https://mp.weixin.qq.com/s/TEgeXCEwCzpn4CfLDqYOcg",
-    image: "/posts/secondme-cold-start.png",
+    image: withBasePath("/posts/secondme-cold-start.png"),
     source: "微信公众号",
   },
 ];

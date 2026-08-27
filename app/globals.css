@@ -1819,7 +1819,6 @@ html[data-scrolled] .site-header {
 }
 
 .xiaohongshu-qr-image {
-  background-image: url("/xiaohongshu-profile-qr.jpg");
   background-repeat: no-repeat;
   background-position: 92% 95%;
   background-size: 350% auto;
@@ -1899,7 +1898,7 @@ footer h2 {
   border-radius: 0.2rem;
   background-color: #020203;
   background-image:
-    url("/lanyard-texture.png"),
+    var(--lanyard-texture),
     linear-gradient(90deg, #020203, #101114 42%, #030304 72%, #000);
   background-repeat: no-repeat space, no-repeat;
   background-position: center top, center;
