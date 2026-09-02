@@ -36,6 +36,7 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /英文一手信息能力/);
   assert.match(html, /科研式学习与创新/);
   assert.match(html, /id="skills"/);
+  assert.match(html, /PRODUCT × TECH × GROWTH/);
   assert.match(html, /Product Thinking/);
   assert.match(html, /Technical Fluency/);
   assert.match(html, /Research Depth/);

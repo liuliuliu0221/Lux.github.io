@@ -241,7 +241,7 @@ export function CinematicPortfolio() {
 
         <section className="expertise-new noise-field" id="skills" aria-labelledby="skills-title">
           <header className="editorial-heading">
-            <p className="micro-label">EXPERTISE / HOW I WORK</p>
+            <p className="micro-label">PRODUCT × TECH × GROWTH</p>
             <h2 id="skills-title">
               <MultiStyleWords
                 segments={[

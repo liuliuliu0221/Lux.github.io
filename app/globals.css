@@ -99,7 +99,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   color: rgb(255 255 255 / 72%); font-size: .42rem; letter-spacing: .09em;
 }
 .about-card > h2 {
-  max-width: 52rem; margin: 2rem auto 1.35rem; text-align: center; font-size: clamp(2.1rem, 5vw, 4.6rem);
+  max-width: 52rem; margin: .8rem auto .75rem; text-align: center; font-size: clamp(2.1rem, 5vw, 4.6rem);
   font-weight: 400; letter-spacing: -.055em; line-height: .95;
 }
 .about-card > h2 .multi-style-words { justify-content: center; }
@@ -283,7 +283,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   .about-new, .expertise-new, .work-new, .journal-new, .contact-new { padding: 5rem .75rem; }
   .about-card { padding: 2rem 1rem; }
   .about-portrait { width: min(66vw, 15rem); margin-top: 2.5rem; }
-  .about-card > h2 { margin: 1.75rem auto 1.2rem; }
+  .about-card > h2 { margin: .75rem auto .7rem; }
   .about-advantages { margin-top: 3.5rem; }
   .about-advantages li { grid-template-columns: 2rem 1fr; gap: .65rem 1rem; padding: 1.35rem 0; }
   .about-advantages p { grid-column: 2; }
