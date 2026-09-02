@@ -86,8 +86,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   max-width: 72rem; margin: 0 auto; padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
   border-radius: clamp(1.5rem, 3vw, 3rem); background: var(--ink); text-align: center;
 }
+.about-portrait {
+  position: relative; width: clamp(12rem, 20vw, 17rem); aspect-ratio: 3 / 4; margin: 3rem auto 0; overflow: hidden;
+  border-radius: 999px 999px 1.25rem 1.25rem; background: #080808; box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 42%);
+}
+.about-portrait::after {
+  position: absolute; inset: 0; border: 1px solid rgb(225 224 204 / 20%); border-radius: inherit; content: ""; pointer-events: none;
+}
+.about-portrait img { object-fit: cover; object-position: 50% 43%; filter: saturate(.8) contrast(1.05); }
+.about-portrait figcaption {
+  position: absolute; right: .85rem; bottom: .8rem; left: .85rem; z-index: 1; display: flex; justify-content: space-between;
+  color: rgb(255 255 255 / 72%); font-size: .42rem; letter-spacing: .09em;
+}
 .about-card > h2 {
-  max-width: 52rem; margin: 3rem auto 5rem; text-align: center; font-size: clamp(2.1rem, 5vw, 4.6rem);
+  max-width: 52rem; margin: 4rem auto 2.5rem; text-align: center; font-size: clamp(2.1rem, 5vw, 4.6rem);
   font-weight: 400; letter-spacing: -.055em; line-height: .95;
 }
 .about-card > h2 .multi-style-words { justify-content: center; }
@@ -96,7 +108,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 .scroll-reveal-copy {
   margin: 0; color: var(--primary); font-size: clamp(.9rem, 1.4vw, 1.08rem); letter-spacing: -.01em; line-height: 1.65;
 }
-.about-signature { display: flex; justify-content: center; gap: 1.2rem; margin-top: 2rem; color: var(--faint); font-size: .52rem; letter-spacing: .09em; text-transform: uppercase; }
+.about-advantages { max-width: 58rem; margin: clamp(4rem, 7vw, 7rem) auto 0; padding: 0; list-style: none; text-align: left; }
+.about-advantages li {
+  display: grid; grid-template-columns: 3rem minmax(10rem, 14rem) minmax(0, 1fr); gap: 1.5rem; align-items: start;
+  padding: 1.65rem 0; border-top: 1px solid var(--line);
+}
+.about-advantages li:last-child { border-bottom: 1px solid var(--line); }
+.advantage-number { color: var(--faint); font-size: .52rem; letter-spacing: .1em; }
+.about-advantages h3 { margin: -.15rem 0 0; color: var(--cream); font-size: clamp(.88rem, 1.4vw, 1.1rem); font-weight: 400; letter-spacing: -.02em; }
+.about-advantages p { margin: 0; color: var(--muted); font-size: clamp(.68rem, 1vw, .78rem); line-height: 1.75; }
 
 .noise-field { position: relative; isolation: isolate; }
 .noise-field::before {
@@ -262,8 +282,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   .hero-side-copy > p { max-width: 24rem; }
   .about-new, .expertise-new, .work-new, .journal-new, .contact-new { padding: 5rem .75rem; }
   .about-card { padding: 2rem 1rem; }
-  .about-card > h2 { margin: 2.5rem auto 3.5rem; }
-  .about-signature { flex-direction: column; gap: .55rem; }
+  .about-portrait { width: min(66vw, 15rem); margin-top: 2.5rem; }
+  .about-card > h2 { margin: 3rem auto 2rem; }
+  .about-advantages { margin-top: 3.5rem; }
+  .about-advantages li { grid-template-columns: 2rem 1fr; gap: .65rem 1rem; padding: 1.35rem 0; }
+  .about-advantages p { grid-column: 2; }
   .editorial-heading, .work-heading, .journal-heading { padding: 0 .25rem; }
   .capability-cards { grid-template-columns: 1fr; }
   .capability-card { min-height: 24rem; }

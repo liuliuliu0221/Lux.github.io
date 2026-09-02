@@ -105,6 +105,39 @@ const capabilityCards = [
   },
 ];
 
+const aboutAdvantages = [
+  {
+    number: "01",
+    title: "AI 产品 0→1",
+    description:
+      "覆盖调研、需求定义、模型评测与跨团队上线，并能基于 SDD 和 Vibe Coding 独立完成前后端交付；已上线 2 款产品，服务 80+ 用户，GitHub 开源 10+ 项目。",
+  },
+  {
+    number: "02",
+    title: "前沿技术转化",
+    description:
+      "持续追踪新模型与 Agent 的能力边界，把技术理解沉淀为可复用的开发、运营工作流，个人提效约 4 小时/天。",
+  },
+  {
+    number: "03",
+    title: "冷启动与增长闭环",
+    description:
+      "通过自媒体与科技社群低成本获取种子用户，累计获取 500+ 早期用户，并以测试群反馈驱动快速迭代。",
+  },
+  {
+    number: "04",
+    title: "英文一手信息能力",
+    description:
+      "CET-6、TOEFL 83，可直接阅读英文技术文档、论文与官方 Release Notes，持续跟踪海外开发者社区。",
+  },
+  {
+    number: "05",
+    title: "科研式学习与创新",
+    description:
+      "本科专业第 3、保送至 985 高校攻读硕士；参与核量子化学与国家自然科学基金项目，发表 2 篇 SCI 论文，拥有 2 项专利与 1 项软件著作权。",
+  },
+];
+
 const contactIcons = { email: Mail, github: Code2, resume: Download } as const;
 
 export function CinematicPortfolio() {
@@ -157,24 +190,52 @@ export function CinematicPortfolio() {
         <section className="about-new" id="about" aria-labelledby="about-title">
           <div className="about-card">
             <p className="micro-label">AI PRODUCT / ABOUT</p>
+            <motion.figure
+              className="about-portrait"
+              initial={{ opacity: 0, y: 28, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-8%" }}
+              transition={{ duration: 0.9, ease }}
+            >
+              <Image
+                src="/profile-lux.jpg"
+                alt="刘芯羽（Lux）的个人照片"
+                fill
+                sizes="(max-width: 760px) 66vw, 17rem"
+              />
+              <figcaption>
+                <span>LUX / 2026</span>
+                <span>AI PRODUCT BUILDER</span>
+              </figcaption>
+            </motion.figure>
             <h2 id="about-title">
               <MultiStyleWords
                 segments={[
                   { text: `我是${profile.name}，` },
-                  { text: "一名能从 0 到 1 推进 AI 产品的构建者。", className: "serif-accent" },
-                  { text: "我让前沿技术真正落地，也让产品找到它的第一批用户。" },
+                  { text: "一名兼具产品判断与技术执行力的 AI 产品构建者。", className: "serif-accent" },
                 ]}
               />
             </h2>
             <div className="about-story">
               <ScrollRevealText>
-                我具备 AI 产品 0→1 的独立交付能力：从用户洞察与竞品分析出发，完成需求定义、模型评测和前后端落地；再通过内容与科技社群完成冷启动，用数据和反馈快速迭代。我习惯直接追踪英文一手技术信息，把新模型、Agent 与工作流转化为实际生产力。科研训练则让我擅长拆解复杂问题、建立评测标准，并始终用证据做判断。
+                我把研究者的严谨、产品经理的判断与独立构建者的执行力，放进同一条从想法到用户的链路中。
               </ScrollRevealText>
-              <div className="about-signature">
-                <span>{profile.role}</span>
-                <span>0→1 Product Builder</span>
-              </div>
             </div>
+            <ol className="about-advantages" aria-label="个人优势">
+              {aboutAdvantages.map((advantage, index) => (
+                <motion.li
+                  key={advantage.number}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-8%" }}
+                  transition={{ duration: 0.65, delay: index * 0.06, ease }}
+                >
+                  <span className="advantage-number">{advantage.number}</span>
+                  <h3>{advantage.title}</h3>
+                  <p>{advantage.description}</p>
+                </motion.li>
+              ))}
+            </ol>
           </div>
         </section>
 

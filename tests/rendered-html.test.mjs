@@ -29,7 +29,12 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /autoPlay="" loop="" muted="" playsInline=""/);
   assert.match(html, /id="about"/);
   assert.match(html, /我是刘芯羽/);
-  assert.match(html, /0→1 Product Builder/);
+  assert.match(html, /src="\/profile-lux\.jpg"/);
+  assert.match(html, /AI 产品 0→1/);
+  assert.match(html, /前沿技术转化/);
+  assert.match(html, /冷启动与增长闭环/);
+  assert.match(html, /英文一手信息能力/);
+  assert.match(html, /科研式学习与创新/);
   assert.match(html, /id="skills"/);
   assert.match(html, /Product Thinking/);
   assert.match(html, /Technical Fluency/);
