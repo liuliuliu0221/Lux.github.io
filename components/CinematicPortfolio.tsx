@@ -124,11 +124,6 @@ export function CinematicPortfolio() {
             <div className="film-wash" aria-hidden="true" />
             <div className="film-noise" aria-hidden="true" />
 
-            <div className="hero-topline">
-              <span>AI PRODUCT / 2026</span>
-              <span>RESEARCH → PRODUCT</span>
-            </div>
-
             <div className="cinematic-copy">
               <div className="hero-title-wrap">
                 <motion.p
@@ -137,7 +132,7 @@ export function CinematicPortfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.35, ease }}
                 >
-                  AI Product Manager · Indie Developer
+                  刘芯羽 · AI Product Manager · Indie Developer
                 </motion.p>
                 <h1 id="hero-title"><WordsPullUp text="Lux" asterisk /></h1>
               </div>
@@ -148,11 +143,10 @@ export function CinematicPortfolio() {
                 transition={{ duration: 0.85, delay: 0.58, ease }}
               >
                 <p>
-                  从量子化学走向 AI 产品，用研究者的严谨与创造者的直觉，
-                  在复杂系统中找到更清晰、更低摩擦的路径。
+                  我把量子化学研究中的问题拆解与验证能力，转化为清晰、可信、可用的 AI 产品。
                 </p>
                 <a className="cinematic-cta" href="#about">
-                  <span>走进我的实验室</span>
+                  <span>了解我的故事</span>
                   <i aria-hidden="true"><ArrowRight size={16} strokeWidth={1.7} /></i>
                 </a>
               </motion.div>
@@ -162,48 +156,23 @@ export function CinematicPortfolio() {
 
         <section className="about-new" id="about" aria-labelledby="about-title">
           <div className="about-card">
-            <p className="micro-label">ABOUT / CROSS-DISCIPLINARY</p>
+            <p className="micro-label">AI PRODUCT / ABOUT</p>
             <h2 id="about-title">
               <MultiStyleWords
                 segments={[
-                  { text: `你好，我是${profile.name}，` },
-                  { text: "一名研究复杂系统的", className: "serif-accent" },
-                  { text: "AI 产品经理与独立开发者。" },
+                  { text: `我是${profile.name}，` },
+                  { text: "一名从科研走向产品的构建者。", className: "serif-accent" },
+                  { text: "我专注于 AI 产品设计、技术验证与叙事表达。" },
                 ]}
               />
             </h2>
-
-            <div className="about-body-grid">
-              <motion.figure
-                className="portrait-frame"
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.9, ease }}
-              >
-                <Image
-                  src={profile.portrait}
-                  alt={`${profile.name}的个人照片`}
-                  fill
-                  sizes="(max-width: 760px) 88vw, 31vw"
-                  priority
-                />
-                <figcaption>
-                  <span>PORTRAIT / 001</span>
-                  <span>{profile.englishName}</span>
-                </figcaption>
-              </motion.figure>
-
-              <div className="about-narrative">
-                <ScrollRevealText>
-                  长期的科研训练让我习惯在高维、模糊且充满约束的空间里拆解问题、验证假设并寻找最优路径。如今，我把同一套思维迁移到 AI 产品：理解技术边界，识别真实需求，再把复杂能力转化为自然、可信、可用的体验。
-                </ScrollRevealText>
-                <dl className="profile-facts">
-                  <div><dt>ROLE</dt><dd>{profile.role}</dd></div>
-                  <div><dt>EDUCATION</dt><dd>{profile.education}</dd></div>
-                  <div><dt>BACKGROUND</dt><dd>量子化学 / 高维构象空间</dd></div>
-                  <div><dt>FOCUS</dt><dd>Human–AI Interaction</dd></div>
-                </dl>
+            <div className="about-story">
+              <ScrollRevealText>
+                我是 Lux，大连理工大学（985）硕士，拥有量子化学研究背景。长期科研训练让我习惯拆解复杂问题、验证假设并在约束中做出判断。现在，我把同一套能力用于 AI 产品实践：理解技术边界，识别真实需求，再把复杂能力转化为自然、可信、可用的体验。
+              </ScrollRevealText>
+              <div className="about-signature">
+                <span>{profile.role}</span>
+                <span>Human–AI Interaction</span>
               </div>
             </div>
           </div>
@@ -215,8 +184,8 @@ export function CinematicPortfolio() {
             <h2 id="skills-title">
               <MultiStyleWords
                 segments={[
-                  { text: "Studio-grade thinking for complex AI products." },
-                  { text: "Built on evidence. Powered by curiosity.", className: "muted-line" },
+                  { text: "Research-grade thinking for meaningful AI products." },
+                  { text: "Built for clarity. Powered by evidence.", className: "muted-line" },
                 ]}
               />
             </h2>
@@ -237,7 +206,7 @@ export function CinematicPortfolio() {
                 />
               </video>
               <div className="capability-film-overlay" />
-              <p>From research<br />to product.</p>
+              <p>Your complex problem,<br />made clear.</p>
             </motion.article>
 
             {capabilityCards.map((card, index) => (

@@ -12,7 +12,7 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent("pes:client-error", {
+    window.dispatchEvent(new CustomEvent("lux:client-error", {
       detail: { digest: error.digest ?? "unavailable" },
     }));
   }, [error]);

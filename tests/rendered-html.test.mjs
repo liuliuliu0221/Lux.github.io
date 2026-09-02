@@ -24,13 +24,11 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /<html[^>]*lang="zh-CN"/i);
   assert.match(html, /<title>Lux｜AI Product Manager · Indie Developer<\/title>/i);
   assert.match(html, /AI Product Manager · Indie Developer/);
-  assert.match(html, /RESEARCH → PRODUCT/);
-  assert.match(html, /走进我的实验室/);
+  assert.match(html, /了解我的故事/);
   assert.match(html, /class="hero-film"/);
   assert.match(html, /autoPlay="" loop="" muted="" playsInline=""/);
   assert.match(html, /id="about"/);
-  assert.match(html, /你好，我是刘芯羽/);
-  assert.match(html, /大连理工大学（985）硕士/);
+  assert.match(html, /我是刘芯羽/);
   assert.match(html, /Human–AI Interaction/);
   assert.match(html, /id="skills"/);
   assert.match(html, /Product Thinking/);
@@ -116,6 +114,7 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   assert.match(css, /--primary:\s*#dedbc8/);
   assert.match(profileData, /name: "刘芯羽"/);
   assert.match(profileData, /englishName: "Lux"/);
+  assert.match(profileData, /education: "大连理工大学（985）硕士"/);
   assert.match(profileData, /13478454399@163\.com/);
   assert.match(profileData, /github\.com\/liuliuliu0221/);
   assert.match(profileData, /placeholder: true/);
