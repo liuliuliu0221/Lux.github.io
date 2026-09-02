@@ -161,18 +161,18 @@ export function CinematicPortfolio() {
               <MultiStyleWords
                 segments={[
                   { text: `我是${profile.name}，` },
-                  { text: "一名从科研走向产品的构建者。", className: "serif-accent" },
-                  { text: "我专注于 AI 产品设计、技术验证与叙事表达。" },
+                  { text: "一名能从 0 到 1 推进 AI 产品的构建者。", className: "serif-accent" },
+                  { text: "我让前沿技术真正落地，也让产品找到它的第一批用户。" },
                 ]}
               />
             </h2>
             <div className="about-story">
               <ScrollRevealText>
-                我是 Lux，大连理工大学（985）硕士，拥有量子化学研究背景。长期科研训练让我习惯拆解复杂问题、验证假设并在约束中做出判断。现在，我把同一套能力用于 AI 产品实践：理解技术边界，识别真实需求，再把复杂能力转化为自然、可信、可用的体验。
+                我具备 AI 产品 0→1 的独立交付能力：从用户洞察与竞品分析出发，完成需求定义、模型评测和前后端落地；再通过内容与科技社群完成冷启动，用数据和反馈快速迭代。我习惯直接追踪英文一手技术信息，把新模型、Agent 与工作流转化为实际生产力。科研训练则让我擅长拆解复杂问题、建立评测标准，并始终用证据做判断。
               </ScrollRevealText>
               <div className="about-signature">
                 <span>{profile.role}</span>
-                <span>Human–AI Interaction</span>
+                <span>0→1 Product Builder</span>
               </div>
             </div>
           </div>
