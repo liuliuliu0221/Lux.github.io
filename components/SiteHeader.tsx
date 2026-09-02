@@ -11,17 +11,16 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
 
   return (
     <header className="site-header">
-      <a className="brand" href={home ? "#home" : withBasePath("/")} aria-label="PES Explorer 首页">
-        <span className="brand-mark" aria-hidden="true" />
-        PES Explorer
+      <a className="brand" href={home ? "#home" : withBasePath("/")} aria-label="Lux 个人主页">
+        Lux <span aria-hidden="true">*</span>
       </a>
 
       <nav className="desktop-nav" aria-label="主要导航">
-        <a href={anchor("home")}>Home</a>
         <a href={anchor("about")}>About</a>
-        <a href={anchor("skills")}>Skills</a>
-        <a href={anchor("projects")}>Projects</a>
-        <a href={anchor("blog")}>Blog</a>
+        <a href={anchor("skills")}>Expertise</a>
+        <a href={anchor("projects")}>Selected work</a>
+        <a href={anchor("blog")}>Journal</a>
+        <a href={anchor("contact")}>Inquiries</a>
       </nav>
 
       <TrackedLink
@@ -32,18 +31,17 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
         eventTarget="placeholder-resume"
         eventSource="header"
       >
-        Resume
+        Résumé ↗
       </TrackedLink>
 
       <details className="mobile-menu">
         <summary>Menu</summary>
         <nav aria-label="移动端导航">
-          <a href={anchor("home")}>Home</a>
           <a href={anchor("about")}>About</a>
-          <a href={anchor("skills")}>Skills</a>
-          <a href={anchor("projects")}>Projects</a>
-          <a href={anchor("blog")}>Blog</a>
-          <a href={anchor("contact")}>Contact</a>
+          <a href={anchor("skills")}>Expertise</a>
+          <a href={anchor("projects")}>Selected work</a>
+          <a href={anchor("blog")}>Journal</a>
+          <a href={anchor("contact")}>Inquiries</a>
           <TrackedLink
             href={profile.contacts[0].href}
             download={profile.contacts[0].download}
@@ -51,7 +49,7 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
             eventTarget="placeholder-resume"
             eventSource="mobile-menu"
           >
-            Download Resume
+            Résumé ↗
           </TrackedLink>
         </nav>
       </details>

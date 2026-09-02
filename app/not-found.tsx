@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { withBasePath } from "@/lib/paths";
-import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function NotFound() {
@@ -8,15 +7,14 @@ export default function NotFound() {
     <>
       <SiteHeader />
       <main className="status-page" id="main">
-        <p className="section-index">404 / COORDINATE NOT FOUND</p>
-        <h1>这组坐标不在当前势能面上。</h1>
-        <p>页面可能已移动，或仍在等待补充。返回全局视图继续探索。</p>
+        <p className="micro-label">404 / LOST FRAME</p>
+        <h1>这一幕不在<br />当前故事里。</h1>
+        <p>页面可能已经移动。回到首页，继续浏览 Lux 的作品与思考。</p>
         <div className="status-actions">
-          <Link className="primary-button" href={withBasePath("/")}>返回首页</Link>
-          <Link href={`${withBasePath("/")}#blog`}>查看 Blog</Link>
+          <Link className="status-primary" href={withBasePath("/")}>返回首页</Link>
+          <Link href={`${withBasePath("/")}#blog`}>查看 Journal ↗</Link>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

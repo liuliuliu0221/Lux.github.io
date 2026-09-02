@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
 export const siteConfig = {
-  name: "PES Explorer",
-  title: "PES Explorer｜AI 产品经理候选人",
-  description: "在技术逻辑与产品思维之间，寻找 Human-AI Interaction 的全局最优解。",
+  name: "Lux Portfolio",
+  title: "Lux｜AI Product Manager · Indie Developer",
+  description: "刘芯羽（Lux）的个人作品集：从量子化学研究走向 AI 产品，在复杂系统中寻找更清晰、更低摩擦的路径。",
   url: siteUrl,
   ogImage: new URL(withBasePath("/og.png"), siteUrl).toString(),
   isProduction,

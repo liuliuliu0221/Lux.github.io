@@ -19,11 +19,11 @@ export default function ErrorPage({
 
   return (
     <main className="status-page" id="main">
-      <p className="section-index">SYSTEM STATE / RECOVERABLE</p>
-      <h1>探索路径暂时偏离。</h1>
-      <p>核心内容仍然安全。你可以重新计算当前路径，或返回首页继续浏览。</p>
+      <p className="micro-label">SYSTEM / RECOVERABLE</p>
+      <h1>这一幕暂时<br />无法加载。</h1>
+      <p>你可以重新尝试，或返回首页继续浏览。</p>
       <div className="status-actions">
-        <button className="primary-button" type="button" onClick={reset}>重新计算</button>
+        <button className="status-primary" type="button" onClick={reset}>重新尝试</button>
         <Link href={withBasePath("/")}>返回首页</Link>
       </div>
     </main>
