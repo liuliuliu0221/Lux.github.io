@@ -87,21 +87,21 @@ function ScrollRevealText({ children }: { children: string }) {
 const capabilityCards = [
   {
     number: "01",
-    title: "Product Thinking.",
-    description: "把模糊问题压缩成清晰、可验证的产品路径。",
-    items: ["需求挖掘与定义", "PRD 与用户故事", "竞品与数据研究", "Human-in-the-loop 设计"],
+    title: "0→1 Product Delivery.",
+    description: "从需求洞察到模型验收，推进 AI 产品完整落地链路。",
+    items: ["竞品分析与用户研究", "PRD / SDD 可执行规格", "模型评测与效果验收", "2 款产品上线 · 80+ 用户"],
   },
   {
     number: "02",
-    title: "Technical Fluency.",
-    description: "理解模型与工程边界，让产品决策落到真实约束上。",
-    items: ["Python / 数据处理", "机器学习与深度学习", "AI 工作流与 Agent", "本地优先架构"],
+    title: "AI-Native Building.",
+    description: "追踪前沿技术边界，把模型与 Agent 能力转化为实际生产力。",
+    items: ["前沿模型能力评估", "Agent 工作流与 Skill", "Vibe Coding 全栈搭建", "自动化提效约 4h/d"],
   },
   {
     number: "03",
-    title: "Research Depth.",
-    description: "在高不确定性的研究空间里，持续提出并验证假设。",
-    items: ["量子化学与 DFT", "高维构象空间", "反应路径研究", "学术写作与事实核验"],
+    title: "Launch & Growth.",
+    description: "不依赖投放，从产品上线到种子用户，再以真实反馈驱动迭代。",
+    items: ["自媒体内容触达", "黑客松 / OPC 科技社群", "累计 500+ 早期用户", "测试群反馈与快速迭代"],
   },
 ];
 
@@ -245,8 +245,8 @@ export function CinematicPortfolio() {
             <h2 id="skills-title">
               <MultiStyleWords
                 segments={[
-                  { text: "Research-grade thinking for meaningful AI products." },
-                  { text: "Built for clarity. Powered by evidence.", className: "muted-line" },
+                  { text: "From insight to shipped AI products." },
+                  { text: "From launch to real user growth.", className: "muted-line" },
                 ]}
               />
             </h2>
@@ -267,7 +267,7 @@ export function CinematicPortfolio() {
                 />
               </video>
               <div className="capability-film-overlay" />
-              <p>Your complex problem,<br />made clear.</p>
+              <p>From idea<br />to real users.</p>
             </motion.article>
 
             {capabilityCards.map((card, index) => (
