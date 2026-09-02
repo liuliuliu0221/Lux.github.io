@@ -44,8 +44,7 @@ function MultiStyleWords({ segments }: { segments: Array<{ text: string; classNa
         <span className={`word-mask ${className ?? ""}`} key={`${word}-${index}`}>
           <motion.span
             initial={{ y: "115%" }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.78, delay: index * 0.065, ease }}
           >
             {word}
