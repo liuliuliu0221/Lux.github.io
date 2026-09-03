@@ -117,6 +117,9 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   ]);
 
   assert.match(portfolio, /<main id="main">/);
+  assert.match(portfolio, /src=\{profile\.portrait\}/);
+  assert.match(await readFile(new URL("../app/robots.ts", import.meta.url), "utf8"), /withBasePath\("\/sitemap\.xml"\)/);
+  assert.match(await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8"), /withBasePath\(path\)/);
   assert.match(portfolio, /aria-labelledby="hero-title"/);
   assert.match(portfolio, /useScroll/);
   assert.match(portfolio, /useTransform/);

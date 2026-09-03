@@ -198,7 +198,7 @@ export function CinematicPortfolio() {
               transition={{ duration: 0.9, ease }}
             >
               <Image
-                src="/profile-lux.jpg"
+                src={profile.portrait}
                 alt="刘芯羽（Lux）的个人照片"
                 fill
                 sizes="(max-width: 760px) 66vw, 17rem"
