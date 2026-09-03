@@ -42,9 +42,8 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /Launch &amp; Growth/);
   assert.match(html, /500\+ 早期用户/);
   assert.match(html, /id="projects"/);
-  assert.match(html, />Ideas,</);
-  assert.match(html, />made</);
-  assert.match(html, />useful\.</);
+  assert.match(html, /把想法/);
+  assert.match(html, /做成真正可用的产品/);
   assert.match(html, /核反应堆氩气介质中物质反应机制/);
   assert.match(html, /水滴待办/);
   assert.match(html, /id="blog"/);
@@ -55,6 +54,8 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /10\.3390\/atmos13071071/);
   assert.match(html, /10\.1016\/j\.atmosenv\.2026\.122119/);
   assert.match(html, /id="contact"/);
+  assert.match(html, /一起做点/);
+  assert.match(html, /真正有用的事/);
   assert.match(html, /超级土豆饼/);
   assert.match(html, /href="mailto:13478454399@163\.com/);
   assert.match(html, /github\.com\/liuliuliu0221/);
@@ -119,6 +120,7 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   assert.match(css, /grid-template-columns:\s*repeat\(4/);
   assert.match(css, /--cream:\s*#e1e0cc/);
   assert.match(css, /--primary:\s*#dedbc8/);
+  assert.match(css, /--type-section-title:/);
   assert.match(profileData, /name: "刘芯羽"/);
   assert.match(profileData, /englishName: "Lux"/);
   assert.match(profileData, /education: "大连理工大学（985）硕士"/);

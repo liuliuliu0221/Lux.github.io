@@ -12,6 +12,10 @@
   --line: rgb(225 224 204 / 15%);
   --section-label-gap: 2rem;
   --section-content-gap: clamp(2.5rem, 3.5vw, 4rem);
+  --type-section-title: clamp(2.1rem, 5vw, 4.6rem);
+  --type-section-copy: clamp(.78rem, 1.1vw, .9rem);
+  --type-card-title: clamp(1.15rem, 1.8vw, 2rem);
+  --type-card-copy: .72rem;
   --serif: "Instrument Serif", Georgia, serif;
   --sans: "Almarai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -158,9 +162,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 }
 
 .work-new { border-top: 1px solid rgb(225 224 204 / 7%); }
-.work-heading { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 2rem; align-items: end; }
-.work-heading h2 { margin: 0; font-size: clamp(3rem, 7vw, 7.5rem); font-weight: 400; letter-spacing: -.07em; line-height: .84; }
-.work-heading > p:last-child { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.65; }
+.work-heading { display: block; }
+.work-heading h2 { max-width: 72rem; margin: var(--section-label-gap) 0 0; }
+.work-heading > p:last-child { max-width: 42rem; margin: 1.5rem 0 0; color: var(--muted); line-height: 1.65; }
 .work-grid { display: grid; max-width: 88rem; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .55rem; margin: 0 auto; }
 .work-card {
   display: flex; min-height: 32rem; grid-column: span 4; flex-direction: column; padding: 1.55rem;
@@ -228,9 +232,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 }
 .contact-new > .micro-label { margin-bottom: var(--section-label-gap); }
 .contact-new h2 {
-  max-width: 12ch; margin: 0 auto; font-size: clamp(3.6rem, 10vw, 10.5rem); font-weight: 400; letter-spacing: -.075em; line-height: .82;
+  max-width: 16ch; margin: 0 auto;
 }
-.contact-new h2 .words-pull-up { justify-content: center; }
+.contact-new h2 .multi-style-words { justify-content: center; }
 .contact-cn { max-width: 38rem; margin: var(--section-label-gap) auto 2rem; color: var(--muted); font-size: .85rem; line-height: 1.7; }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; }
 .contact-actions a {
@@ -245,6 +249,26 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 .closing-footer span:nth-child(2) { text-align: center; }
 .closing-footer span:last-child { text-align: right; }
 .resume-notice { margin: .8rem 0 0; color: rgb(225 224 204 / 25%); font-size: .5rem; }
+
+.about-card > h2,
+.editorial-heading h2,
+.work-heading h2,
+.journal-heading h2,
+.contact-new h2 {
+  font-size: var(--type-section-title); font-weight: 400; letter-spacing: -.055em; line-height: .96;
+}
+.scroll-reveal-copy,
+.work-heading > p:last-child,
+.contact-cn { font-size: var(--type-section-copy); }
+.capability-card h3,
+.work-card > h3,
+.journal-copy h3,
+.publication-block h3 { font-size: var(--type-card-title); }
+.capability-card > p,
+.work-card-copy p,
+.journal-copy p,
+.publication-block p,
+.publication-block small { font-size: var(--type-card-copy); }
 
 .status-page {
   display: flex; min-height: 100svh; flex-direction: column; align-items: center; justify-content: center;
@@ -263,11 +287,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 
 @media (max-width: 980px) {
   .cinematic-copy { grid-template-columns: minmax(0, 1.5fr) minmax(15rem, .7fr); }
-  .about-card > h2 { margin-bottom: 4rem; }
   .capability-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-card, .work-card:nth-child(1), .work-card:nth-child(2), .work-card:nth-child(3), .work-card:nth-child(5) { grid-column: span 6; }
-  .work-heading { grid-template-columns: 1fr 2fr; }
-  .work-heading > p:last-child { grid-column: 2; }
   .journal-row { grid-template-columns: 7rem 3.25rem minmax(0, 1fr) 7rem 1.5rem; gap: 1rem; }
   .journal-thumb { height: 6rem; }
 }
@@ -292,8 +313,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   .editorial-heading, .work-heading, .journal-heading { padding: 0 .25rem; }
   .capability-cards { grid-template-columns: 1fr; }
   .capability-card { min-height: 24rem; }
-  .work-heading { display: block; }
-  .work-heading h2 { margin: 2rem 0; }
+  .work-heading h2 { margin-top: var(--section-label-gap); }
   .work-grid { grid-template-columns: 1fr; }
   .work-card, .work-card:nth-child(1), .work-card:nth-child(2), .work-card:nth-child(3), .work-card:nth-child(5) { min-height: 28rem; grid-column: auto; }
   .journal-row {

@@ -244,8 +244,8 @@ export function CinematicPortfolio() {
             <h2 id="skills-title">
               <MultiStyleWords
                 segments={[
-                  { text: "From insight to shipped AI products." },
-                  { text: "From launch to real user growth.", className: "muted-line" },
+                  { text: "把产品、技术与增长，" },
+                  { text: "连成一条完整的 0→1 链路。", className: "serif-accent" },
                 ]}
               />
             </h2>
@@ -297,8 +297,13 @@ export function CinematicPortfolio() {
         <section className="work-new" id="projects" aria-labelledby="work-title">
           <header className="work-heading">
             <p className="micro-label">SELECTED WORK / 01—05</p>
-            <h2 id="work-title"><WordsPullUp text="Ideas, made useful." /></h2>
-            <p>从科研方法到内容工作流，再到本地优先的独立产品。每个项目都记录了一次从约束出发的选择。</p>
+            <h2 id="work-title">
+              <MultiStyleWords segments={[
+                { text: "把想法，" },
+                { text: "做成真正可用的产品。", className: "serif-accent" },
+              ]} />
+            </h2>
+            <p>每个项目都从真实约束出发，记录我如何定义问题、验证路径并完成交付。</p>
           </header>
 
           <div className="work-grid">
@@ -386,7 +391,12 @@ export function CinematicPortfolio() {
 
         <section className="contact-new" id="contact" aria-labelledby="contact-title">
           <p className="micro-label">INQUIRIES / LET&apos;S TALK</p>
-          <h2 id="contact-title"><WordsPullUp text="Let’s make something useful." /></h2>
+          <h2 id="contact-title">
+            <MultiStyleWords segments={[
+              { text: "一起做点，" },
+              { text: "真正有用的事。", className: "serif-accent" },
+            ]} />
+          </h2>
           <p className="contact-cn">
             如果你也在思考 AI 产品、复杂系统或新的协作方式，欢迎来聊。也可以在小红书与微信公众号「{profile.publicAccountName}」找到我。
           </p>
