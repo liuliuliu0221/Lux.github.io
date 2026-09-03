@@ -20,18 +20,18 @@ export const profile = {
   education: "大连理工大学（985）硕士",
   email: "13478454399@163.com",
   description: "量子化学研究背景与 AI 产品能力的跨领域候选人。",
-  contentNotice: "当前简历仍为功能占位文件，正式发布前替换。",
+  contentNotice: "正式简历已上线，可在页面底部下载。",
   publicAccountName: "超级土豆饼",
   portrait: withBasePath("/profile-lux.jpg"),
   contacts: [
     {
       id: "resume",
-      label: "下载占位简历",
+      label: "下载个人简历",
       shortLabel: "RESUME",
-      href: withBasePath("/resume-placeholder.pdf"),
+      href: withBasePath("/liu-xinyu-ai-product-resume.pdf"),
       event: "resume_download",
       download: "刘芯羽-AIPM-简历.pdf",
-      placeholder: true,
+      placeholder: false,
     },
     {
       id: "email",

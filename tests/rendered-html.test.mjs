@@ -53,6 +53,7 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /308 项测试与 15 项构建/);
   assert.match(html, /github\.com\/liuliuliu0221\/ProductWoc/);
   assert.match(html, /WaterDropTodo/);
+  assert.match(html, /次日留存率 50%/);
   assert.doesNotMatch(html, /人人都是产品经理文章写作 Skill/);
   assert.match(html, /id="blog"/);
   assert.match(html, /AI越懂你，为什么越容易答错/);
@@ -68,8 +69,8 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /href="mailto:13478454399@163\.com/);
   assert.match(html, /github\.com\/liuliuliu0221/);
   assert.match(html, /xiaohongshu\.com\/user\/profile\/63f4f96f000000000f01239d/);
-  assert.match(html, /href="\/resume-placeholder\.pdf"/);
-  assert.match(html, /当前下载文件为占位简历/);
+  assert.match(html, /href="\/liu-xinyu-ai-product-resume\.pdf"/);
+  assert.doesNotMatch(html, /当前下载文件为占位简历/);
   assert.match(html, /http:\/\/localhost:3000\/og\.png/);
   assert.match(html, /<meta(?=[^>]*name="robots")(?=[^>]*content="noindex, nofollow")[^>]*>/);
   assert.match(html, /"@type":"ProfilePage"/);
@@ -136,7 +137,8 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   assert.match(profileData, /education: "大连理工大学（985）硕士"/);
   assert.match(profileData, /13478454399@163\.com/);
   assert.match(profileData, /github\.com\/liuliuliu0221/);
-  assert.match(profileData, /placeholder: true/);
+  assert.match(profileData, /href: withBasePath\("\/liu-xinyu-ai-product-resume\.pdf"\)/);
+  assert.match(profileData, /download: "刘芯羽-AIPM-简历\.pdf"/);
   assert.match(projectData, /id: "05"/);
   assert.match(projectData, /项目结项报告涉密，不公开展示/);
   assert.match(layout, /Lux — AI Product Manager · Indie Developer/);
