@@ -179,6 +179,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 .work-card:nth-child(1), .work-card:nth-child(5) { grid-column: span 6; }
 .work-card:nth-child(2), .work-card:nth-child(3) { grid-column: span 3; }
 .work-card:hover { background: #181818; transform: translateY(-3px); }
+.work-card-reactor {
+  border-color: rgb(116 169 194 / 28%);
+  background: linear-gradient(145deg, #10232d 0%, #0c171d 62%, #101719 100%);
+}
+.work-card-reactor:hover { background: linear-gradient(145deg, #15303d 0%, #102029 62%, #121c20 100%); }
+.work-card-reactor > header { color: rgb(164 201 216 / 58%); }
+.work-card-reactor > footer { border-top-color: rgb(137 184 204 / 20%); }
 .work-card > header { display: flex; justify-content: space-between; color: var(--faint); font-size: .52rem; letter-spacing: .08em; }
 .work-card > header span:last-child { max-width: 52%; text-align: right; }
 .work-card > h3 {

@@ -47,7 +47,11 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /把想法/);
   assert.match(html, /做成真正可用的产品/);
   assert.match(html, /核反应堆氩气介质中物质反应机制/);
-  assert.match(html, /水滴待办/);
+  assert.match(html, /ProductWoc/);
+  assert.match(html, /308 项测试与 15 项构建/);
+  assert.match(html, /github\.com\/liuliuliu0221\/ProductWoc/);
+  assert.match(html, /WaterDropTodo/);
+  assert.doesNotMatch(html, /人人都是产品经理文章写作 Skill/);
   assert.match(html, /id="blog"/);
   assert.match(html, /AI越懂你，为什么越容易答错/);
   assert.match(html, /ACADEMIC PUBLICATIONS/);
@@ -124,6 +128,7 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   assert.match(css, /--primary:\s*#dedbc8/);
   assert.match(css, /--type-section-title:/);
   assert.match(css, /--zh-sans:\s*"PingFang SC"/);
+  assert.match(css, /\.work-card-reactor/);
   assert.match(profileData, /name: "刘芯羽"/);
   assert.match(profileData, /englishName: "Lux"/);
   assert.match(profileData, /education: "大连理工大学（985）硕士"/);

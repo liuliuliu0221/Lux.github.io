@@ -9,6 +9,7 @@ export type Project = {
   evidence: string;
   tags: string[];
   url?: string;
+  tone?: "reactor";
   curve: {
     startEnergy: number;
     barrierEnergy: number;
@@ -28,6 +29,7 @@ export const projects: Project[] = [
     outcome: "形成了可用于项目研究的 Po、Pb、Bi 量化计算方法与基组方案。",
     evidence: "项目结项报告涉密，不公开展示；此处仅呈现经本人确认的研究范围与结果。",
     tags: ["量子化学", "PBTK", "反应机制"],
+    tone: "reactor",
     curve: { startEnergy: 40, barrierEnergy: 88, endEnergy: 24, transitionProgress: 0.24 },
   },
   {
@@ -58,21 +60,21 @@ export const projects: Project[] = [
   },
   {
     id: "04",
-    slug: "woshipm-article-writing-skill",
-    title: "人人都是产品经理文章写作 Skill",
-    type: "EDITORIAL WORKFLOW SKILL",
-    challenge: "长篇 AI 产品文章既要具备鲜明观点，也要保证公开事实可核验，避免虚构经验和无依据结论。",
-    decision: "建立从资料检索、选题、提纲到分节写作和终稿审校的阶段化流程，并在关键节点保留人工确认。",
-    outcome: "形成可复用的中文长文写作 Skill，并配套 Markdown 检查脚本与参考规范。",
-    evidence: "公开仓库提供完整工作流、检查脚本和 MIT License。",
-    tags: ["Writing Skill", "事实核验", "Human-in-the-loop"],
-    url: "https://github.com/liuliuliu0221/woshipm-article-writing-skill",
-    curve: { startEnergy: 32, barrierEnergy: 66, endEnergy: 14, transitionProgress: 0.65 },
+    slug: "productwoc",
+    title: "ProductWoc",
+    type: "LOCAL-FIRST AI DEVELOPMENT",
+    challenge: "AI 编程流程容易丢失上下文，模型变更、代码补丁与验证证据难以追踪，失败后也缺少安全恢复路径。",
+    decision: "构建本地优先的 Planning → Development 工作流，以不可变快照、人工审批、受控 Patch、Evidence 与回滚机制约束 Agent 执行。",
+    outcome: "完成 Web 与 CLI 双端、断点恢复和多模型路由；通过 Gate G3、308 项测试与 15 项构建，并以 MIT 协议开源。",
+    evidence: "公开仓库包含架构决策、质量门禁、安全策略与完整验证报告。",
+    tags: ["Agent Workflow", "Local-first", "Evidence & Recovery"],
+    url: "https://github.com/liuliuliu0221/ProductWoc",
+    curve: { startEnergy: 36, barrierEnergy: 78, endEnergy: 15, transitionProgress: 0.66 },
   },
   {
     id: "05",
     slug: "drop-todo",
-    title: "水滴待办（WaterDropTodo）",
+    title: "WaterDropTodo",
     type: "MACOS PRODUCT",
     challenge: "传统待办列表把截止压力呈现为抽象时间，用户很难持续感知任务的紧迫程度。",
     decision: "将任务映射为 MacBook 刘海下方的液滴，用位置、颜色和生命周期交互表达时间变化，并坚持本地优先。",

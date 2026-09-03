@@ -310,7 +310,7 @@ export function CinematicPortfolio() {
           <div className="work-grid">
             {projects.map((project, index) => (
               <motion.article
-                className="work-card"
+                className={`work-card${project.tone ? ` work-card-${project.tone}` : ""}`}
                 key={project.id}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
