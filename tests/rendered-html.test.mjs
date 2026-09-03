@@ -24,6 +24,8 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /<html[^>]*lang="zh-CN"/i);
   assert.match(html, /<title>Lux｜AI Product Manager · Indie Developer<\/title>/i);
   assert.match(html, /AI Product Manager · Indie Developer/);
+  assert.match(html, /从科学研究到 AI 产品/);
+  assert.match(html, /可验证、可落地的解法/);
   assert.match(html, /了解我的故事/);
   assert.match(html, /class="hero-film"/);
   assert.match(html, /autoPlay="" loop="" muted="" playsInline=""/);
@@ -121,6 +123,7 @@ test("keeps the redesign responsive, accessible, and evidence-based", async () =
   assert.match(css, /--cream:\s*#e1e0cc/);
   assert.match(css, /--primary:\s*#dedbc8/);
   assert.match(css, /--type-section-title:/);
+  assert.match(css, /--zh-sans:\s*"PingFang SC"/);
   assert.match(profileData, /name: "刘芯羽"/);
   assert.match(profileData, /englishName: "Lux"/);
   assert.match(profileData, /education: "大连理工大学（985）硕士"/);

@@ -164,7 +164,8 @@ export function CinematicPortfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.35, ease }}
                 >
-                  刘芯羽 · AI Product Manager · Indie Developer
+                  <span className="hero-name">刘芯羽</span>
+                  <span className="hero-role">· AI Product Manager · Indie Developer</span>
                 </motion.p>
                 <h1 id="hero-title"><WordsPullUp text="Lux" asterisk /></h1>
               </div>
@@ -175,7 +176,7 @@ export function CinematicPortfolio() {
                 transition={{ duration: 0.85, delay: 0.58, ease }}
               >
                 <p>
-                  我把量子化学研究中的问题拆解与验证能力，转化为清晰、可信、可用的 AI 产品。
+                  从科学研究到 AI 产品，我始终在探索如何把复杂问题转化为可验证、可落地的解法。
                 </p>
                 <a className="cinematic-cta" href="#about">
                   <span>了解我的故事</span>

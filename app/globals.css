@@ -12,12 +12,13 @@
   --line: rgb(225 224 204 / 15%);
   --section-label-gap: 2rem;
   --section-content-gap: clamp(2.5rem, 3.5vw, 4rem);
-  --type-section-title: clamp(2.1rem, 5vw, 4.6rem);
+  --type-section-title: clamp(2rem, 3.2vw, 3.25rem);
   --type-section-copy: clamp(.78rem, 1.1vw, .9rem);
   --type-card-title: clamp(1.15rem, 1.8vw, 2rem);
   --type-card-copy: .72rem;
   --serif: "Instrument Serif", Georgia, serif;
   --sans: "Almarai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --zh-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 * { box-sizing: border-box; font-family: var(--sans); }
@@ -62,8 +63,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   position: absolute; right: 2.25rem; bottom: 2.15rem; left: 2.25rem; display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(17rem, .72fr); gap: 3rem; align-items: end;
 }
-.hero-intro { margin: 0 0 1rem; color: rgb(225 224 204 / 72%); font-size: clamp(.68rem, 1vw, .86rem); }
-.cinematic-copy h1 { margin: 0; font-size: clamp(8rem, 20vw, 20rem); font-weight: 400; letter-spacing: -.09em; line-height: .67; }
+.hero-intro {
+  display: flex; flex-wrap: wrap; gap: .35rem; align-items: baseline; margin: 0 0 1rem;
+  color: rgb(225 224 204 / 72%); font-size: clamp(.68rem, 1vw, .86rem);
+}
+.hero-name { color: var(--cream); font-family: var(--zh-sans); font-size: clamp(1rem, 1.35vw, 1.22rem); font-weight: 600; }
+.hero-role { font-size: clamp(.66rem, .9vw, .8rem); }
+.cinematic-copy h1 { margin: 0; font-size: clamp(6.5rem, 14vw, 14rem); font-weight: 400; letter-spacing: -.09em; line-height: .72; }
 .words-pull-up, .multi-style-words { display: inline-flex; flex-wrap: wrap; }
 .word-mask { display: inline-flex; overflow: hidden; margin-right: .23em; padding-bottom: .06em; vertical-align: bottom; }
 .word-mask > span { display: inline-block; }
@@ -109,7 +115,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   font-weight: 400; letter-spacing: -.055em; line-height: .95;
 }
 .about-card > h2 .multi-style-words { justify-content: center; }
-.serif-accent, .serif-accent > span { font-family: var(--serif); font-style: italic; font-weight: 400; }
+.serif-accent, .serif-accent > span { font-family: inherit; font-style: normal; font-weight: inherit; }
 .about-story { max-width: 43rem; margin: 0 auto; }
 .scroll-reveal-copy {
   margin: 0; color: var(--primary); font-size: clamp(.9rem, 1.4vw, 1.08rem); letter-spacing: -.01em; line-height: 1.65;
@@ -255,7 +261,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
 .work-heading h2,
 .journal-heading h2,
 .contact-new h2 {
-  font-size: var(--type-section-title); font-weight: 400; letter-spacing: -.055em; line-height: .96;
+  font-family: var(--zh-sans); font-size: var(--type-section-title); font-style: normal;
+  font-weight: 400; letter-spacing: -.035em; line-height: 1.08;
+}
+.about-card > h2 *,
+.editorial-heading h2 *,
+.work-heading h2 *,
+.journal-heading h2 *,
+.contact-new h2 * {
+  font-family: inherit; font-style: normal; font-weight: inherit;
 }
 .scroll-reveal-copy,
 .work-heading > p:last-child,
@@ -301,7 +315,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 1px soli
   .cinematic-hero { padding: .5rem; }
   .cinematic-frame { min-height: calc(100svh - 1rem); border-radius: 1.35rem; }
   .cinematic-copy { right: 1rem; bottom: 1.25rem; left: 1rem; grid-template-columns: 1fr; gap: 1.8rem; }
-  .cinematic-copy h1 { font-size: clamp(7rem, 38vw, 11rem); }
+  .cinematic-copy h1 { font-size: clamp(6rem, 28vw, 9rem); }
   .hero-side-copy > p { max-width: 24rem; }
   .about-new, .expertise-new, .work-new, .journal-new, .contact-new { padding: 5rem .75rem; }
   .about-card { padding: 2rem 1rem; }
