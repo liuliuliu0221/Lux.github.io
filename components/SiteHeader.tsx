@@ -12,8 +12,8 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
       <nav aria-label="主要导航">
         <a href={anchor("about")}>About</a>
         <a href={anchor("skills")}>Expertise</a>
-        <a href={anchor("projects")}>Work</a>
-        <a href={anchor("blog")}>Writing</a>
+        <a href={anchor("projects")}>Project</a>
+        <a href={anchor("blog")}>Blog</a>
         <a href={anchor("contact")}>Inquiries</a>
       </nav>
     </header>

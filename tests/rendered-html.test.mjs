@@ -24,6 +24,8 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /<html[^>]*lang="zh-CN"/i);
   assert.match(html, /<title>Lux｜AI Product Manager · Indie Developer<\/title>/i);
   assert.match(html, /AI Product Manager · Indie Developer/);
+  assert.match(html, /href="#projects">Project<\/a>/);
+  assert.match(html, /href="#blog">Blog<\/a>/);
   assert.match(html, /从科学研究到 AI 产品/);
   assert.match(html, /可验证、可落地的解法/);
   assert.match(html, /了解我的故事/);
@@ -46,6 +48,7 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /从产品上线到种子用户/);
   assert.doesNotMatch(html, /不依赖投放/);
   assert.match(html, /id="projects"/);
+  assert.match(html, /PROJECT \/ 01—05/);
   assert.match(html, /把想法/);
   assert.match(html, /做成真正可用的产品/);
   assert.match(html, /核反应堆氩气介质中物质反应机制/);
@@ -56,6 +59,7 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /次日留存率 50%/);
   assert.doesNotMatch(html, /人人都是产品经理文章写作 Skill/);
   assert.match(html, /id="blog"/);
+  assert.match(html, /BLOG \/ FIELD NOTES/);
   assert.match(html, /AI越懂你，为什么越容易答错/);
   assert.match(html, /ACADEMIC PUBLICATIONS/);
   assert.match(html, /PUB\.001/);

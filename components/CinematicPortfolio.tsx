@@ -297,7 +297,7 @@ export function CinematicPortfolio() {
 
         <section className="work-new" id="projects" aria-labelledby="work-title">
           <header className="work-heading">
-            <p className="micro-label">SELECTED WORK / 01—05</p>
+            <p className="micro-label">PROJECT / 01—05</p>
             <h2 id="work-title">
               <MultiStyleWords segments={[
                 { text: "把想法，" },
@@ -342,7 +342,7 @@ export function CinematicPortfolio() {
 
         <section className="journal-new" id="blog" aria-labelledby="journal-title">
           <header className="journal-heading">
-            <p className="micro-label">JOURNAL / FIELD NOTES</p>
+            <p className="micro-label">BLOG / FIELD NOTES</p>
             <h2 id="journal-title">
               <MultiStyleWords segments={[
                 { text: "观察 AI 世界。" },
