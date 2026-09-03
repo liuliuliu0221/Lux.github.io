@@ -99,7 +99,7 @@ const capabilityCards = [
   {
     number: "03",
     title: "Launch & Growth.",
-    description: "不依赖投放，从产品上线到种子用户，再以真实反馈驱动迭代。",
+    description: "从产品上线到种子用户，再以真实反馈驱动迭代。",
     items: ["自媒体内容触达", "黑客松 / OPC 科技社群", "累计 500+ 早期用户", "测试群反馈与快速迭代"],
   },
 ];
