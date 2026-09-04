@@ -81,7 +81,7 @@ export const projects: Project[] = [
     outcome: "完成 4 个阶段迭代，从 1.0 升级至 5.0，落地 8 项核心能力；用户周均使用 5 天，次日留存率 50%，版本更新后活跃度提升 20%。",
     evidence: "完成 16 种花朵、5 档稀有度与 3 级花池设计，并通过 5,000 次任务事件和性能测试验证。",
     tags: ["SwiftUI", "Growth Loop", "Local-first"],
-    url: "https://github.com/liuliuliu0221/drop-todo",
+    url: "https://waterdroptodo.cn",
     curve: { startEnergy: 44, barrierEnergy: 86, endEnergy: 20, transitionProgress: 0.78 },
   },
 ];

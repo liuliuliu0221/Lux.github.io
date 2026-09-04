@@ -56,6 +56,7 @@ test("server-renders the cinematic Lux portfolio", async () => {
   assert.match(html, /308 项测试与 15 项构建/);
   assert.match(html, /github\.com\/liuliuliu0221\/ProductWoc/);
   assert.match(html, /WaterDropTodo/);
+  assert.match(html, /href="https:\/\/waterdroptodo\.cn"/);
   assert.match(html, /次日留存率 50%/);
   assert.doesNotMatch(html, /人人都是产品经理文章写作 Skill/);
   assert.match(html, /id="blog"/);
